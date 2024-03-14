@@ -20,7 +20,7 @@ fun main() {
                 val menu2 = readLine()?.toInt()
 
                 if(menu2 == 1) {
-                    val choice = CheeseBurGer("치즈버거").hamBurGer()
+                    val choice = BBurGer(menu2).hamBurGer()
                     println("가격: ${choice.price}")
 
                     println("할인: ${choice.saleCount}원 할인되었습니다.")
@@ -28,6 +28,7 @@ fun main() {
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
+                    result -= resultSale
 
                     println("메뉴를 추가로 선택하시겠습니까? 1.yes 2.no")
                     val menu3 = readLine()?.toInt()
@@ -41,7 +42,7 @@ fun main() {
                     }
 
                 } else if(menu2 == 2){
-                    val choice = BeefBurGer("불고기버거").hamBurGer()
+                    val choice = BBurGer(menu2).hamBurGer()
 
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
@@ -61,7 +62,7 @@ fun main() {
                         break
                     }
                 } else if(menu2 == 3) {
-                    val choice = ChickenBurGer("치킨버거").hamBurGer()
+                    val choice = BBurGer(menu2).hamBurGer()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -88,7 +89,7 @@ fun main() {
                 val menu2 = readLine()?.toInt()
 
                 if(menu2 == 1) {
-                    val choice = CheesePizza("치즈피자").pizzaList()
+                    val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -108,7 +109,7 @@ fun main() {
                     }
 
                 } else if(menu2 == 2){
-                    val choice = BeefPizza("불고기피자").pizzaList()
+                    val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -127,7 +128,7 @@ fun main() {
                         break
                     }
                 } else if(menu2 == 3) {
-                    val choice = ComBiNationPizza("콤비네이션피자").pizzaList()
+                    val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -150,11 +151,11 @@ fun main() {
                 }
             }
             3 -> {
-                println("햄버거 종류: \n1. 후라이드치킨 | $10\n2. 양념치킨 | $12\n3. 간장치킨 | $11.5\netc: 메뉴로 돌아가기")
+                println("치킨종류: \n1. 후라이드치킨 | $10\n2. 양념치킨 | $12\n3. 간장치킨 | $11.5\netc: 메뉴로 돌아가기")
                 val menu2 = readLine()?.toInt()
 
                 if(menu2 == 1) {
-                    val choice = OriginalChicken("후라이드치킨").chickenList()
+                    val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -174,7 +175,7 @@ fun main() {
                     }
 
                 } else if(menu2 == 2){
-                    val choice = HotChicken("양념치킨").chickenList()
+                    val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -193,7 +194,7 @@ fun main() {
                         break
                     }
                 } else if(menu2 == 3) {
-                    val choice = SoySauceChicken("간장치킨").chickenList()
+                    val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -220,7 +221,7 @@ fun main() {
                 val menu2 = readLine()?.toInt()
 
                 if(menu2 == 1) {
-                    val choice = Cola("콜라").drinkList()
+                    val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -240,7 +241,7 @@ fun main() {
                     }
 
                 } else if(menu2 == 2){
-                    val choice = Sprite("사이다").drinkList()
+                    val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price
@@ -259,7 +260,7 @@ fun main() {
                         break
                     }
                 } else if(menu2 == 3) {
-                    val choice = Alcohol("주류").drinkList()
+                    val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
                     result += choice.price

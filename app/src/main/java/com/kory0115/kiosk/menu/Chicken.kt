@@ -1,7 +1,7 @@
 package com.kory0115.kiosk.menu
 
 import com.kory0115.kiosk.menuEntity.MenuEntity
-import com.kory0115.kiosk.menuEntity.pizzaMenuList
+import com.kory0115.kiosk.menuEntity.MenuList
 
 abstract class Chicken() {
     abstract val name: String
@@ -11,33 +11,35 @@ abstract class Chicken() {
     abstract fun chickenList(): MenuEntity
 }
 
-class OriginalChicken(override val name: String) : Chicken() {
-    override val price: Int = 10000
-    override val event: Boolean = true
-    override val saleCount: Int = 3000
+class CChicken(num: Int) : Chicken() {
+    override val name: String = MenuList().chickenList()[num - 1].name
+    override val price: Int = MenuList().chickenList()[num - 1].price
+    override val event: Boolean = MenuList().chickenList()[num - 1].event
+    override val saleCount: Int = MenuList().chickenList()[num - 1].saleCount
 
     override fun chickenList() : MenuEntity {
         return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
     }
 }
 
-class HotChicken(override val name: String) : Chicken() {
-    override val price: Int = 12000
-    override val event: Boolean = true
-    override val saleCount: Int = 3000
-
-
-    override fun chickenList() : MenuEntity {
-        return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
-    }
-}
-
-class SoySauceChicken(override val name: String) : Chicken() {
-    override val price: Int = 11500
-    override val event: Boolean = true
-    override val saleCount: Int = 3000
+/*class HotChicken() : Chicken() {
+    override val name: String = MenuList().chickenList()[1].name
+    override val price: Int = MenuList().chickenList()[1].price
+    override val event: Boolean = MenuList().chickenList()[1].event
+    override val saleCount: Int = MenuList().chickenList()[1].saleCount
 
     override fun chickenList() : MenuEntity {
         return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
     }
 }
+
+class SoySauceChicken() : Chicken() {
+    override val name: String = MenuList().chickenList()[2].name
+    override val price: Int = MenuList().chickenList()[2].price
+    override val event: Boolean = MenuList().chickenList()[2].event
+    override val saleCount: Int = MenuList().chickenList()[2].saleCount
+
+    override fun chickenList() : MenuEntity {
+        return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
+    }
+}*/

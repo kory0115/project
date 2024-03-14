@@ -1,6 +1,6 @@
 package com.kory0115.kiosk.menu
 
-import com.kory0115.kiosk.menuEntity.MenuEntity
+import com.kory0115.kiosk.menuEntity.*
 
 abstract class BurGer() {
     abstract val name: String
@@ -11,35 +11,38 @@ abstract class BurGer() {
     abstract fun hamBurGer(): MenuEntity
 }
 
-class CheeseBurGer(override val name: String) : BurGer() {
-    override val price: Int = 2500
-    override val event: Boolean = false
-    override val saleCount: Int = 1000
+class BBurGer(num: Int) : BurGer() {
+    override val name: String = MenuList().burgerList()[num - 1].name
+    override val price: Int = MenuList().burgerList()[num - 1].price
+    override val event: Boolean = MenuList().burgerList()[num - 1].event
+    override val saleCount: Int = MenuList().burgerList()[num - 1].saleCount
 
     override fun hamBurGer() : MenuEntity {
         return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
     }
 }
 
-class BeefBurGer(override val name: String) : BurGer() {
-    override val price: Int = 3000
-    override val event: Boolean = true
-    override val saleCount: Int = 1000
+/*class BeefBurGer() : BurGer() {
+    override val name: String = MenuList().burgerList()[1].name
+    override val price: Int = MenuList().burgerList()[1].price
+    override val event: Boolean = MenuList().burgerList()[1].event
+    override val saleCount: Int = MenuList().burgerList()[1].saleCount
 
     override fun hamBurGer() : MenuEntity {
         return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
     }
 }
 
-class ChickenBurGer(override val name: String) : BurGer() {
-    override val price: Int = 3000
-    override val event: Boolean = true
-    override val saleCount: Int = 1000
+class ChickenBurGer() : BurGer() {
+    override val name: String = MenuList().burgerList()[2].name
+    override val price: Int = MenuList().burgerList()[2].price
+    override val event: Boolean = MenuList().burgerList()[2].event
+    override val saleCount: Int = MenuList().burgerList()[2].saleCount
 
     override fun hamBurGer() : MenuEntity {
         return MenuEntity(name = name, price = price, event = event, saleCount = saleCount)
     }
-}
+}*/
 
 
 

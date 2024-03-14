@@ -4,5 +4,5 @@ data class MenuEntity(
     val name: String,
     val price: Int,
     val event: Boolean,
-    val saleCount: Int
+    val saleCount: Int,
 )
