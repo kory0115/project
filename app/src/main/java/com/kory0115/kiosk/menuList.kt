@@ -13,7 +13,7 @@ class menuList {
         resultMoney: Int,
         list: List<Pair<String, Int>>,
         saleCount: Int
-    ) {
+    ) : Boolean {
 
         println("=====영수증=====\n")
         for (i in list.indices) {
@@ -24,10 +24,12 @@ class menuList {
 
         if(currentMoney - resultMoney < 0) {
             println("결제 할수없습니다!!. \n다른카드를 사용해주세요!!")
+            return false
+        } else {
+            println("계산후 남은돈은 ${currentMoney - resultMoney}원 입니다.")
+            println("현재결제 시각은 : \n${SimpleDateFormat("yyyy-MM-dd \nhh:mm:ss").format(System.currentTimeMillis())}입니다.")
+            return true
         }
-        println("계산후 남은돈은 ${currentMoney - resultMoney}원 입니다.")
-
-        println("현재결제 시각은 : \n${SimpleDateFormat("yyyy-MM-dd \nhh:mm:ss").format(System.currentTimeMillis())}입니다.")
     }
 
     @SuppressLint("SimpleDateFormat")

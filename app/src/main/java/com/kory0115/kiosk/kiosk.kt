@@ -37,8 +37,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
 
                 } else if(menu2 == 2){
@@ -58,8 +62,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else if(menu2 == 3) {
                     val choice = BBurGer(menu2).hamBurGer()
@@ -77,8 +85,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else {
                     continue
@@ -104,8 +116,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
 
                 } else if(menu2 == 2){
@@ -124,8 +140,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else if(menu2 == 3) {
                     val choice = PPizza(menu2).pizzaList()
@@ -143,8 +163,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else {
                     continue
@@ -170,8 +194,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
 
                 } else if(menu2 == 2){
@@ -190,8 +218,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else if(menu2 == 3) {
                     val choice = CChicken(menu2).chickenList()
@@ -209,8 +241,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else {
                     continue
@@ -236,8 +272,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
 
                 } else if(menu2 == 2){
@@ -256,8 +296,12 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else if(menu2 == 3) {
                     val choice = DDrink(menu2).drinkList()
@@ -275,16 +319,24 @@ fun main() {
                         menuList().clock()
                         continue
                     } else {
-                        menuList().menuResult(money, result ,foodList, resultSale)
-                        break
+                        val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                        if(trust) break else {
+                            println("음식선택을 초기화 하겠습니다.")
+                            foodList.clear()
+                            continue
+                        }
                     }
                 } else {
                     continue
                 }
             }
             5 -> {
-                menuList().menuResult(money, result, foodList, resultSale)
-                break
+                val trust = menuList().menuResult(money, result ,foodList, resultSale)
+                if(trust) break else {
+                    println("음식선택을 초기화 하겠습니다.")
+                    foodList.clear()
+                    continue
+                }
             }
             6 -> {
                 break
