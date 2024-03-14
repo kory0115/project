@@ -24,11 +24,10 @@ fun main() {
                     println("가격: ${choice.price}")
 
                     println("할인: ${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
-                    result -= resultSale
 
                     println("메뉴를 추가로 선택하시겠습니까? 1.yes 2.no")
                     val menu3 = readLine()?.toInt()
@@ -41,16 +40,18 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
 
                 } else if(menu2 == 2){
-                    val choice = BBurGer(menu2).hamBurGer()
 
+                    val choice = BBurGer(menu2).hamBurGer()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -66,6 +67,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -73,7 +76,7 @@ fun main() {
                     val choice = BBurGer(menu2).hamBurGer()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -89,6 +92,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -104,7 +109,7 @@ fun main() {
                     val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -120,6 +125,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -128,7 +135,7 @@ fun main() {
                     val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -144,6 +151,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -151,7 +160,7 @@ fun main() {
                     val choice = PPizza(menu2).pizzaList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -167,6 +176,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -182,7 +193,7 @@ fun main() {
                     val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -198,6 +209,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -206,7 +219,7 @@ fun main() {
                     val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -222,6 +235,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -229,10 +244,11 @@ fun main() {
                     val choice = CChicken(menu2).chickenList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
+                    result -= resultSale
 
                     println("메뉴를 추가로 선택하시겠습니까? 1.yes 2.no")
                     val menu3 = readLine()!!.toInt()
@@ -245,6 +261,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -260,7 +278,7 @@ fun main() {
                     val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -276,6 +294,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -284,7 +304,7 @@ fun main() {
                     val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -300,6 +320,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -307,7 +329,7 @@ fun main() {
                     val choice = DDrink(menu2).drinkList()
                     println("${choice.price}")
                     println("${choice.saleCount}원 할인되었습니다.")
-                    result += choice.price
+                    result += (choice.price - choice.saleCount)
                     resultSale += choice.saleCount
 
                     foodList.add(Pair(choice.name, choice.price))
@@ -323,6 +345,8 @@ fun main() {
                         if(trust) break else {
                             println("음식선택을 초기화 하겠습니다.")
                             foodList.clear()
+                            result = 0
+                            resultSale = 0
                             continue
                         }
                     }
@@ -335,6 +359,8 @@ fun main() {
                 if(trust) break else {
                     println("음식선택을 초기화 하겠습니다.")
                     foodList.clear()
+                    result = 0
+                    resultSale = 0
                     continue
                 }
             }

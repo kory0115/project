@@ -22,13 +22,14 @@ class menuList {
         println("계산하실 돈은 ${resultMoney}원 입니다.")
         println("총 ${saleCount}원 할인되셨습니다.")
 
-        if(currentMoney - resultMoney < 0) {
+        return if(currentMoney - resultMoney < 0) {
             println("결제 할수없습니다!!. \n다른카드를 사용해주세요!!")
-            return false
+            false
         } else {
+            println(currentMoney)
             println("계산후 남은돈은 ${currentMoney - resultMoney}원 입니다.")
             println("현재결제 시각은 : \n${SimpleDateFormat("yyyy-MM-dd \nhh:mm:ss").format(System.currentTimeMillis())}입니다.")
-            return true
+            true
         }
     }
 
